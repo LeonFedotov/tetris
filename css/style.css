@@ -1,0 +1,15 @@
+body,html {
+	background: #363636;
+}
+
+table {
+	margin: 10px auto;
+	border:1px solid #fff;
+	border-collapse: initial;
+}
+
+td {
+	border:2px solid #000;
+	width: 10px;
+	height: 10px;
+}
