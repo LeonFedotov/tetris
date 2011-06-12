@@ -13,36 +13,31 @@ var Shape = {
 		var newY = 0;
 		for(var x in this.body) {
 			for(var y in this.body[x]) {
-				newY = 1 - (y - (this.me - 2));
-				!rotated[newY]  && (rotated[newY] = []);
-				rotated[newY][x] = this.body[x][y];
+				if(this.body[x][y] == 1) {
+					newY = 1 - (y - (this.me - 2));
+					!rotated[newY]  && (rotated[newY] = []);
+					rotated[newY][x] = this.body[x][y];	
+				}
 			}
+
 		}
-		console.log(this.body);
-		console.log(rotated);
+		
 		this.body = rotated;
-		//this.zeroReduce();
+		console.log(rotated);
+		this.zeroReduce();
+		console.log(this.body);
 		return this;
 	},
 	
 	zeroReduce : function (body) {
 		body = body || this.body;
-		var last,row;
-		for(var i in body) {
-			row = body[i];
-			console.log(row, last);
-			while((last = row.pop()) == 0) {
-				
+		this.body = [];
+		while(body.length > 0) {
+			var row = body.pop();
+			if(row !== undefined) {
+				this.body.unshift(row);
 			}
-			if(last === 1) {
-				row.push(1);
-				body[i] = row;
-			} else { 
-				body.splice(1, i);
-			}
-			
 		}
-		this.body = body;
 		return this;
 	},
 	

@@ -6,7 +6,7 @@ if( !Object.create ){
 	};
 }
 
-String.prototype.repeat= function(n){
-    n= n || 1;
+String.prototype.repeat = function(n){
+    n = n || 1;
     return Array(n+1).join(this);
-}
+};
