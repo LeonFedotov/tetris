@@ -33,10 +33,10 @@ var display = {
 	},
 	 
 	draw: function(shape, x, y) {
-		var todraw = shape.body;//.zerofilled();//.reverse();
+		var todraw = shape.getBody().reverse();
 		var that = this;
 		for(var sy in todraw) {
-			var line = todraw[sy];//.reverse();
+			var line = todraw[sy];
 			for(var sx in line) {
 				that.set(line[sx], parseInt(x,10)+parseInt(sx,10), parseInt(y,10)+parseInt(sy,10));
 			}
