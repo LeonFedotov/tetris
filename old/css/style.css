@@ -1,15 +1,113 @@
 body,html {
-	background: #363636;
+	background: #1a1a1a;
+	color: #fff;
+	font-family: 'Courier New', monospace;
+	margin: 0;
+	padding: 0;
+}
+
+#game-container {
+	display: flex;
+	justify-content: center;
+	align-items: flex-start;
+	padding: 20px;
+	gap: 30px;
+}
+
+#game-board {
+	flex-shrink: 0;
 }
 
 table {
-	margin: 10px auto;
-	border:1px solid #fff;
-	border-collapse: initial;
+	border: 2px solid #fff;
+	border-collapse: collapse;
+	background: #000;
 }
 
-td {
-	border:2px solid #000;
-	width: 10px;
-	height: 10px;
+#game-board table td {
+	border: 1px solid #333;
+	width: 20px;
+	height: 20px;
+}
+
+.mini-grid td {
+	border: 1px solid #333;
+	width: 15px;
+	height: 15px;
+}
+
+#sidebar {
+	min-width: 200px;
+}
+
+#sidebar h1 {
+	font-size: 32px;
+	margin: 0 0 20px 0;
+	text-align: center;
+	color: #0ff;
+	text-shadow: 0 0 10px #0ff;
+}
+
+#sidebar h2 {
+	font-size: 16px;
+	margin: 0 0 5px 0;
+	color: #0ff;
+}
+
+.info-section {
+	margin-bottom: 20px;
+}
+
+#score, #level, #lines {
+	font-size: 24px;
+	font-weight: bold;
+	color: #fff;
+}
+
+#next-piece, #hold-piece {
+	background: #000;
+	padding: 5px;
+	border: 1px solid #666;
+	display: inline-block;
+}
+
+.controls {
+	font-size: 12px;
+	line-height: 1.6;
+}
+
+.control-line {
+	color: #aaa;
+	margin: 2px 0;
+}
+
+#start-btn {
+	background: #0f0;
+	color: #000;
+	border: none;
+	padding: 10px 20px;
+	font-size: 16px;
+	font-weight: bold;
+	cursor: pointer;
+	font-family: 'Courier New', monospace;
+	width: 100%;
+}
+
+#start-btn:hover {
+	background: #0c0;
+}
+
+#game-over {
+	background: #f00;
+	color: #fff;
+	padding: 15px;
+	text-align: center;
+	margin-top: 20px;
+	border: 2px solid #fff;
+}
+
+#game-over h2 {
+	color: #fff;
+	margin: 0 0 10px 0;
+	font-size: 24px;
 }

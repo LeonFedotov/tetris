@@ -1,9 +1,11 @@
 var Shape = {
 	body : null,
 	me : 3,
+	color: '#00f',
 	init : function (shape) {
 		this.body = shape.body;
 		this.me   = shape.me;
+		this.color = shape.color || '#00f';
 		return this;
 	},
 	
@@ -63,18 +65,18 @@ var Shape = {
 
 var getShape = {
 	shapes : {
-		1 : { body : [[1, 1, 1], [0, 1]], me : 3},
-		2 : { body : [[1,1,1,1]], me : 4},
-		3 : { body : [[1,1], [1], [1]], me : 3},
-		4 : { body : [[1,1],[1,1]], me : 2},
-		5 : { body : [[0,1,1],[1,1]], me : 3},
-		6 : { body : [[1,1],[0,1,1]], me : 3},
-		7 : { body : [[1,1],[0,1],[0,1]], me : 3}
+		1 : { body : [[1, 1, 1], [0, 1]], me : 3, color: '#a000f0'}, // T - purple
+		2 : { body : [[1,1,1,1]], me : 4, color: '#00f0f0'}, // I - cyan
+		3 : { body : [[1,1], [1], [1]], me : 3, color: '#f0a000'}, // L - orange
+		4 : { body : [[1,1],[1,1]], me : 2, color: '#f0f000'}, // O - yellow
+		5 : { body : [[0,1,1],[1,1]], me : 3, color: '#00f000'}, // S - green
+		6 : { body : [[1,1],[0,1,1]], me : 3, color: '#f00000'}, // Z - red
+		7 : { body : [[1,1],[0,1],[0,1]], me : 3, color: '#0000f0'} // J - blue
 	},
-	
+
 	byId : function (id) {
 		var shape = Object.create(Shape);
-		
+
 		return shape.init(this.shapes[id]);
 	}
 };

@@ -2,13 +2,25 @@
 <html>
 	<head>
 		<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
-		<script src="jquery/dist/jquery.js" type="text/javascript" charset="utf-8"></script>
+		<script src="https://code.jquery.com/jquery-3.6.0.min.js" type="text/javascript" charset="utf-8"></script>
 		<script src="etc.js" type="text/javascript" charset="utf-8"></script>
 		<script src="shapes.js" type="text/javascript" charset="utf-8"></script>
 		<script src="main.js" type="text/javascript" charset="utf-8"></script>
 		<script>
 			$(function () {
-				display.init($('body'));
+				display.init($('#game-board'));
+				input.init();
+				game.init();
+				ui.init();
+
+				// Start button handler
+				$('#start-btn').on('click', function() {
+					if (!game.isRunning) {
+						game.start();
+						game.render();
+						ui.update();
+					}
+				});
 			});
 		</script>
 		<link rel="stylesheet" href="css/reset.css" type="text/css" media="screen" title="no title" charset="utf-8">
@@ -17,5 +29,56 @@
 		<title>tetris</title>
 	</head>
 	<body>
+		<div id="game-container">
+			<div id="game-board"></div>
+			<div id="sidebar">
+				<h1>TETRIS</h1>
+
+				<div class="info-section">
+					<h2>Score</h2>
+					<div id="score">0</div>
+				</div>
+
+				<div class="info-section">
+					<h2>Level</h2>
+					<div id="level">1</div>
+				</div>
+
+				<div class="info-section">
+					<h2>Lines</h2>
+					<div id="lines">0</div>
+				</div>
+
+				<div class="info-section">
+					<h2>Next</h2>
+					<div id="next-piece"></div>
+				</div>
+
+				<div class="info-section">
+					<h2>Hold</h2>
+					<div id="hold-piece"></div>
+				</div>
+
+				<div class="info-section controls">
+					<h2>Controls</h2>
+					<div class="control-line">← → : Move</div>
+					<div class="control-line">↓ : Soft Drop</div>
+					<div class="control-line">↑ or X : Rotate</div>
+					<div class="control-line">Space : Hard Drop</div>
+					<div class="control-line">C : Hold</div>
+					<div class="control-line">P : Pause</div>
+					<div class="control-line">R : Restart</div>
+				</div>
+
+				<div class="info-section">
+					<button id="start-btn">START (Space)</button>
+				</div>
+
+				<div id="game-over" style="display:none;">
+					<h2>GAME OVER</h2>
+					<div>Press R to Restart</div>
+				</div>
+			</div>
+		</div>
 	</body>
 </html>
