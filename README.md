@@ -4,7 +4,7 @@ Tetris in the browser, for desktop and mobile. React, TypeScript and Tailwind, b
 
 Play it at <https://leonfedotov.github.io/tetris/>.
 
-The rules are ported from the ODROID-SHOW2 firmware (`iot/show2-tetris`): SRS rotation states with simple wall kicks, NES scoring and gravity, and a 7-bag randomizer. The 2014 jQuery version is kept in `old/`.
+The rules are ported from the ODROID-SHOW2 firmware (`iot/show2-tetris`): SRS rotation states with simple wall kicks, NES scoring and gravity, and a 7-bag randomizer. The 2011 jQuery version is kept in `old/`.
 
 ## Controls
 
